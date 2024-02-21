@@ -41,13 +41,13 @@ def replace_special_chars(df):
 def main():
     st.title('Citation Fetcher')
     
-    uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
+    uploaded_file = st.file_uploader("Drop a CSV file with only DOI links", type="csv")
     if uploaded_file is not None:
         df = pd.read_csv(uploaded_file)
         dois = df['DOI'].tolist()
 
         # Add a dropdown for citation styles
-        styles = ['ieee', 'apa', 'vancouver', 'chicago', 'mla', 'nature']
+        styles = ['ieee', 'apa', 'vancouver', 'nature']
         selected_style = st.selectbox('Select a citation style:', styles)
 
         st.write("Fetching citations. This may take 5-10 minutes depending on the file size.")
