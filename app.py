@@ -41,7 +41,8 @@ def replace_special_chars(df):
 def main():
     st.title('Citation Fetcher')
     
-    uploaded_file = st.file_uploader("Drop a CSV file with only DOI links", type="csv")
+    uploaded_file = uploaded_file = st.file_uploader("Drop a file with DOI links", type=["csv", "xls", "xlsx", "tsv", "txt", "json"])
+
     if uploaded_file is not None:
         df = pd.read_csv(uploaded_file)
         dois = df['DOI'].tolist()
