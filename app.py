@@ -48,7 +48,7 @@ def main():
         dois = df['DOI'].tolist()
 
         # Add a dropdown for citation styles
-        styles = ['ieee', 'apa', 'vancouver', 'nature']
+        styles = ['ieee', 'apa', 'vancouver', 'chicago-author-date', 'elsevier-harvard', 'modern-language-association']
         selected_style = st.selectbox('Select a citation style:', styles)
 
         st.write("Fetching citations. This may take 5-10 minutes depending on the file size.")
