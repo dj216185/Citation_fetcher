@@ -36,6 +36,9 @@ def replace_special_chars(df):
 
     for encoding, replacement in problem_encodings.items():
         df['Citation'] = df['Citation'].apply(lambda x: x.replace(encoding, replacement))
+        
+    # Add error handling for decoding errors
+    df['Citation'] = df['Citation'].apply(lambda x: x.encode('utf-8', 'ignore').decode('utf-8', 'ignore'))
     return df
 
 def main():
