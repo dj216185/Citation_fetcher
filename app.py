@@ -44,7 +44,7 @@ def replace_special_chars(df):
 def main():
     st.title('Citation Fetcher')
     
-    uploaded_file = uploaded_file = st.file_uploader("Drop a file with DOI links", type=["csv", "xls", "xlsx", "tsv", "txt", "json"])
+    uploaded_file = uploaded_file = st.file_uploader("Drop a file with DOI links and  make sure the column name is DOI", type=["csv", "xls", "xlsx", "tsv", "txt", "json"])
 
     if uploaded_file is not None:
         df = pd.read_csv(uploaded_file)
